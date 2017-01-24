@@ -1,14 +1,28 @@
-group 'com.thoughtworks.thoughtpay'
-version '1.0-SNAPSHOT'
-
+apply plugin: 'idea'
 apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'war'
 
-sourceCompatibility = 1.5
+group = 'com.thoughtworks.thoughtpay'
+version = '1.0-SNAPSHOT'
+
+description = "thoughtpay"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
 
 repositories {
-    mavenCentral()
+     maven { url "http://repo.maven.apache.org/maven2" }
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'org.springframework', name: 'spring-core', version:'4.1.6.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version:'4.1.6.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version:'4.1.6.RELEASE'
+    testCompile group: 'org.springframework', name: 'spring-test', version:'4.1.6.RELEASE'
+    testCompile group: 'junit', name: 'junit', version:'4.8.2'
+    providedCompile group: 'javax.servlet', name: 'servlet-api', version:'2.5'
+    providedCompile group: 'javax.servlet.jsp', name: 'jsp-api', version:'2.1'
 }

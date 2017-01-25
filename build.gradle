@@ -2,9 +2,6 @@ apply plugin: 'idea'
 apply plugin: 'jetty'
 apply plugin: 'java'
 
-[jettyRun, jettyRunWar, jettyStop]*.stopPort = 8081
-[jettyRun, jettyRunWar, jettyStop]*.stopKey = 'stopKey'
-
 jettyRun.contextPath = '/'
 
 task wrapper(type: Wrapper) {

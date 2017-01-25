@@ -8,5 +8,3 @@
 <h1>HELLO GLOBE PEOPLE!</h1>
 </body>
 </html>
-
-<!doctype html>

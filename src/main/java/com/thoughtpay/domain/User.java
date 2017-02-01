@@ -1,5 +1,7 @@
 package com.thoughtpay.domain;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+
 public class User {
 
     private String id;
@@ -30,7 +32,7 @@ public class User {
 
     @Override
     public int hashCode() {
-        return userName.hashCode();
+        return id.hashCode();
     }
 
 }

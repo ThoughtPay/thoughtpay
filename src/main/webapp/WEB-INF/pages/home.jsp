@@ -6,7 +6,7 @@
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     </head>
     <body>
-        <h1>ThoughtWorks</h1>
+        <h1>ThoughtPay</h1>
 
         <div>
             <table>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home - ThoughtPay</title>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
     <h1>ThoughtWorks</h1>
@@ -17,21 +18,13 @@
                 </tr>
             </thead>
             <tbody>
+            <c:forEach var="user" items="${users}">
                 <tr>
-                    <td>nwinston</td>
-                    <td>Napoleon</td>
-                    <td>Winston</td>
+                    <td>${user.userName}</td>
+                    <td>${user.firstName}</td>
+                    <td>${user.lastName}</td>
                 </tr>
-                <tr>
-                    <td>wsugar</td>
-                    <td>Whiskers</td>
-                    <td>Sugar</td>
-                </tr>
-                <tr>
-                    <td>sharley</td>
-                    <td>Sylvester</td>
-                    <td>Harley</td>
-                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>

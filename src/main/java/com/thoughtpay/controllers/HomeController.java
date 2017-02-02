@@ -17,10 +17,6 @@ public class HomeController {
     @Autowired
     private HomeService homeService;
 
-    public HomeController() {
-        this.homeService = homeService;
-    }
-
     @RequestMapping(method = RequestMethod.GET)
     public String getHomePage(Model model) {
         List<User> allUsers = homeService.getAllUsers();

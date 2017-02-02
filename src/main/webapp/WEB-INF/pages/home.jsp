@@ -7,7 +7,6 @@
     </head>
     <body>
         <h1>ThoughtPay</h1>
-
         <div>
             <table>
                 <thead>

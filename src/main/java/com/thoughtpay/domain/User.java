@@ -1,6 +1,5 @@
 package com.thoughtpay.domain;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
 
 public class User {
 
@@ -18,6 +17,14 @@ public class User {
 
     public String getUserName() {
         return userName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     @Override

@@ -18,13 +18,13 @@
                 </tr>
             </thead>
             <tbody>
-            <c:forEach var="user" items="${users}">
-                <tr>
-                    <td>${user.userName}</td>
-                    <td>${user.firstName}</td>
-                    <td>${user.lastName}</td>
-                </tr>
-            </c:forEach>
+                <c:forEach var="user" items="${users}">
+                    <tr>
+                        <td>${user.userName}</td>
+                        <td>${user.firstName}</td>
+                        <td>${user.lastName}</td>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
     </div>

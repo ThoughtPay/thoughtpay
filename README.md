@@ -41,5 +41,5 @@ Make sure you are in the root directory in terminal
 **[How to Add Someone to Mingle](readme_files/Mingle.md)**  
 **[How to Setup JAVA_HOME](readme_files/Setting-up-JAVA_HOME.md)**  
 **[How to Format Commit Message](readme_files/Commit-Format.md)**  
-**[How to Hibernate](readme_files/https://docs.google.com/presentation/d/1GptQc5E2Q0OHBIrs_MZp3z0JFj88GDutTXy9ME3LcUE/edit#slide=id.g1c37a233a9_0_24.md)**  
+**[How to Hibernate](readme_files/https://docs.google.com/presentation/d/1GptQc5E2Q0OHBIrs_MZp3z0JFj88GDutTXy9ME3LcUE/edit#slide=id.g1c37a233a9_0_24)**  
 **[How to Add Team Members](readme_files/Team-Membership.md)**

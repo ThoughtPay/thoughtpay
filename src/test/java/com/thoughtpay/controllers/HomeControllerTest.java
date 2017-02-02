@@ -21,6 +21,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class HomeControllerTest {
 
+    @Mock
     private Model model;
 
     @Mock
@@ -32,7 +33,6 @@ public class HomeControllerTest {
     @Before
     public void setUp() throws Exception {
         initMocks(this);
-        model = mock(Model.class);
     }
 
     @Test

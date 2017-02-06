@@ -43,3 +43,6 @@ Make sure you are in the root directory in terminal
 **[How to Format Commit Message](readme_files/Commit-Format.md)**  
 **[How to Hibernate](https://docs.google.com/presentation/d/1GptQc5E2Q0OHBIrs_MZp3z0JFj88GDutTXy9ME3LcUE/edit#slide=id.g1c37a233a9_0_24)**  
 **[How to Add Team Members](readme_files/Team-Membership.md)**
+
+##Code Reviews
+**[#24 Read Basic User Profiles](readme_files/code-reviews/#24-Read-Basic-User-Profiles.md)**

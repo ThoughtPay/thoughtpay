@@ -22,6 +22,9 @@ public class User {
     @Setter
     private String lastName;
 
+    public User() {
+    }
+
     public User(String id, String userName, String firstName, String lastName) {
         this.id = id;
         this.userName = userName;

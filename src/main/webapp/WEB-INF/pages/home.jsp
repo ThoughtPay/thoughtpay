@@ -14,15 +14,14 @@
                     <tr>
                         <th>Username</th>
                         <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Last Name</th
                         <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach var="user" items="${users}">
                         <tr>
-                            <form:form action="/users/update" method="post">
-                                <input type="hidden" name="id" value="${user.id}">
+                            <form:form action="/users/${user.id}/update" method="post">
                                 <td><input type="text" name="userName" value="${user.userName}" /></td>
                                 <td><input type="text" name="firstName" value="${user.firstName}" /></td>
                                 <td><input type="text" name="lastName" value="${user.lastName}" /></td>

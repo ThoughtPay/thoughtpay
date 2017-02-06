@@ -24,6 +24,12 @@ public class UserRepository {
     }
 
     public void update(String id, User user) {
-
+        for (User currentUser : allUsers) {
+            if (currentUser.getId().equals(id)) {
+                currentUser.setFirstName(user.getFirstName());
+                currentUser.setLastName(user.getLastName());
+                currentUser.setUserName(user.getUserName());
+            }
+        }
     }
 }

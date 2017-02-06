@@ -46,6 +46,11 @@ public class UserRepositoryTest {
 
     @Test
     public void shouldUpdateUserWithID() {
+        String userId = "1";
+        nwinston.setFirstName("Socks");
+        userRepository.update(userId, nwinston);
+        assertEquals(nwinston.getFirstName(), userRepository.getAllUsers().get(0).getFirstName());
+
 
     }
 }

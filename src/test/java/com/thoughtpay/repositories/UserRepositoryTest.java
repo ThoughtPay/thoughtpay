@@ -30,14 +30,14 @@ public class UserRepositoryTest {
 
     @Test
     public void shouldGetListOfAllUsersWhenListIsSizeOne() throws Exception {
-        assertThat(nwinston.getUserName(), is(allUsers.get(0).getUserName()));
+        assertEquals(nwinston, allUsers.get(0));
     }
 
     @Test
     public void shouldGetListOfAllUsersWhenListIsSizeTwo() throws Exception {
         userRepository.getAllUsers();
-        assertThat(nwinston.getUserName(), is(allUsers.get(0).getUserName()));
-        assertThat(wsugar.getUserName(), is(allUsers.get(1).getUserName()));
+        assertEquals(nwinston, allUsers.get(0));
+        assertEquals(wsugar, allUsers.get(1));
     }
 
     @Test

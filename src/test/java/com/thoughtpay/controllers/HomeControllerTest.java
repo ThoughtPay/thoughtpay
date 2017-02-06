@@ -6,14 +6,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.mock;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
@@ -22,7 +21,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 public class HomeControllerTest {
 
     @Mock
-    private Model model;
+    private ModelMap model;
 
     @Mock
     private HomeService homeService;
@@ -37,7 +36,8 @@ public class HomeControllerTest {
 
     @Test
     public void shouldNavigateToHomePageWhenAppStarts() {
-        assertThat("home", is(homeController.getHomePage(model)));
+        ModelAndView homeModelAndView = homeController.getHomePage(model);
+        assertEquals("home", homeModelAndView.getViewName());
     }
 
     @Test

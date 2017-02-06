@@ -1,11 +1,25 @@
 package com.thoughtpay.domain;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class User {
 
+    @Getter
+    @Setter
     private String id;
+
+    @Getter
+    @Setter
     private String userName;
+
+    @Getter
+    @Setter
     private String firstName;
+
+    @Getter
+    @Setter
     private String lastName;
 
     public User(String id, String userName, String firstName, String lastName) {
@@ -13,18 +27,6 @@ public class User {
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     @Override

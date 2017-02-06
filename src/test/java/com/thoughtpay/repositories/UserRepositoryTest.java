@@ -42,4 +42,10 @@ public class UserRepositoryTest {
         List<User> testUsers = Arrays.asList(nwinston, wsugar, sharley);
         assertEquals(testUsers, allUsers);
     }
+
+
+    @Test
+    public void shouldUpdateUserWithID() {
+
+    }
 }

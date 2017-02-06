@@ -22,4 +22,8 @@ public class UserRepository {
     public List<User> getAllUsers() {
         return allUsers;
     }
+
+    public void update(String id, User user) {
+
+    }
 }

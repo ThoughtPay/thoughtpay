@@ -1,16 +1,13 @@
 package com.thoughtpay.repositories;
 
 import com.thoughtpay.domain.User;
-import com.thoughtpay.services.HomeService;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class UserRepositoryTest {
     private User nwinston, wsugar, sharley;

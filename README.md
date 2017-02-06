@@ -45,4 +45,4 @@ Make sure you are in the root directory in terminal
 **[How to Add Team Members](readme_files/Team-Membership.md)**
 
 ##Code Reviews
-**[#24 Read Basic User Profiles](readme_files/code-reviews/#24-Read-Basic-User-Profiles.md)**
+**[#24 Read Basic User Profiles](readme_files/code-reviews/24-Read-Basic-User-Profiles.md)**

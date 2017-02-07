@@ -23,7 +23,7 @@ public class HomeController {
     public ModelAndView getHomePage(ModelMap model) {
         List<User> allUsers = homeService.getAllUsers();
         model.addAttribute("users", allUsers);
-        model.addAttribute("user", new User(null, null, null, null));
+        model.addAttribute("user", new User());
         return new ModelAndView("home", model);
     }
 

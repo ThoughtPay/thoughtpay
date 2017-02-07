@@ -30,8 +30,7 @@ public class UserServiceTest {
 
     @Test
     public void shouldUpdateRepository() {
-        String id = "1";
-        userService.update(id, user);
-        verify(userRepository).update(id, user);
+        userService.update(user);
+        verify(userRepository).update(user);
     }
 }

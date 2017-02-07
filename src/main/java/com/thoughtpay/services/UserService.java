@@ -11,7 +11,7 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public void update(String id, User user) {
-        userRepository.update(id, user);
+    public void update(User user) {
+        userRepository.update(user);
     }
 }

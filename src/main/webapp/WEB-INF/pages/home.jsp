@@ -14,8 +14,7 @@
                     <tr>
                         <th>Username</th>
                         <th>First Name</th>
-                        <th>Last Name</th
-                        <th>Edit</th>
+                        <th>Last Name</th>
                     </tr>
                 </thead>
                 <tbody>

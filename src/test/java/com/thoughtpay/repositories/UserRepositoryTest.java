@@ -26,30 +26,19 @@ public class UserRepositoryTest {
     }
 
     @Test
-    public void shouldGetListOfAllUsersWhenListIsSizeOne() throws Exception {
-        assertEquals(nwinston, allUsers.get(0));
-    }
+    public void getConsultantById() throws Exception {
+        String id = "2";
+        User user = userRepository.getById(id);
+        assertEquals(id, user.getId());
 
-    @Test
-    public void shouldGetListOfAllUsersWhenListIsSizeTwo() throws Exception {
-        userRepository.getAllUsers();
-        assertEquals(nwinston, allUsers.get(0));
-        assertEquals(wsugar, allUsers.get(1));
     }
-
-    @Test
-    public void shouldGetListOfAllUsersWhenListIsAnySize() throws Exception {
-        List<User> testUsers = Arrays.asList(nwinston, wsugar, sharley);
-        assertEquals(testUsers, allUsers);
-    }
-
 
     @Test
     public void shouldUpdateUserWithID() {
-        String userId = "1";
-        nwinston.setFirstName("Socks");
-        userRepository.update(userId, nwinston);
-        assertEquals(nwinston.getFirstName(), userRepository.getAllUsers().get(0).getFirstName());
+        String firstName = "Socks";
+        nwinston.setFirstName(firstName);
+        userRepository.update(nwinston);
+        assertEquals(firstName, userRepository.getById(nwinston.getId()).getFirstName());
 
 
     }

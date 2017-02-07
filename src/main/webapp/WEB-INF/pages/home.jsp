@@ -31,5 +31,17 @@
                 </tbody>
             </table>
         </div>
+        <div>
+            <h3>Create an Account</h3>
+                    <form:form modelAttribute="user" method="post" action="/users/create">
+                Username:
+                    <form:input path="userName"/><br>
+                First Name:
+                    <form:input path="firstName"/><br>
+                Last Name:
+                    <form:input path="lastName"/><br>
+                        <button type="submit" value="Submit">Submit</button>
+            </form:form>
+        </div>
     </body>
 </html>

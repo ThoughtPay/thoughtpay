@@ -22,8 +22,7 @@ public class User {
     @Setter
     private String lastName;
 
-    public User() {
-    }
+    public User() {}
 
     public User(String id, String userName, String firstName, String lastName) {
         this.id = id;
@@ -31,6 +30,8 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
+
 
     @Override
     public boolean equals(Object o) {

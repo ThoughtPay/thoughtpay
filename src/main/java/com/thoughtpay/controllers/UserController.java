@@ -19,4 +19,10 @@ public class UserController {
         return "redirect:/";
     }
 
+    @RequestMapping(value="/create", method = RequestMethod.POST)
+    public String createUser(@ModelAttribute User user) {
+        userService.saveNewUser(user);
+        return "redirect:/";
+    }
+
 }

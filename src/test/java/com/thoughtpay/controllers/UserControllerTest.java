@@ -29,8 +29,14 @@ public class UserControllerTest {
 
     @Test
     public void shouldUpdateUser() throws Exception {
-        String id = "1";
         userController.updateUser(user);
         verify(userService).update(user);
+    }
+
+    @Test
+    public void shouldSaveUserWhenFormIsSubmitted() throws Exception {
+        userController.createUser(user);
+        verify(userService).saveNewUser(user);
+
     }
 }

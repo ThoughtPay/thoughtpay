@@ -10,9 +10,6 @@ import org.mockito.Mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-/**
- * Created by jbealle on 2/6/17.
- */
 public class UserServiceTest {
     @Mock
     UserRepository userRepository;
@@ -32,5 +29,11 @@ public class UserServiceTest {
     public void shouldUpdateRepository() {
         userService.update(user);
         verify(userRepository).update(user);
+    }
+
+    @Test
+    public void shouldSaveUserInRepository() {
+        userService.saveNewUser(user);
+        verify(userRepository).save(user);
     }
 }

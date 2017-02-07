@@ -53,4 +53,6 @@ public class HomeControllerTest {
         when(homeService.getAllUsers()).thenReturn(allUsers);
         verify(model).addAttribute("users", allUsers);
     }
+
+
 }

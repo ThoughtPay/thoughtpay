@@ -14,4 +14,10 @@ public class UserService {
     public void update(User user) {
         userRepository.update(user);
     }
+
+    public void saveNewUser(User newUser) {
+        userRepository.save(newUser);
+    }
 }
+
+

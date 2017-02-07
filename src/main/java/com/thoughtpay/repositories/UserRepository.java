@@ -3,10 +3,7 @@ package com.thoughtpay.repositories;
 import com.thoughtpay.domain.User;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @Repository
 public class UserRepository {
@@ -42,5 +39,15 @@ public class UserRepository {
             return allUsers.get(id);
         }
         return null;
+    }
+
+    public void save(User user) {
+        String id = generateID();
+        user.setId(id);
+        allUsers.put(id, user);
+    }
+
+    private String generateID() {
+        return UUID.randomUUID().toString();
     }
 }

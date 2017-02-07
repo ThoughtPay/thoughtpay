@@ -3,58 +3,70 @@ package com.thoughtpay.repositories;
 import com.thoughtpay.domain.User;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.anyList;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
+import static org.mockito.MockitoAnnotations.initMocks;
 
 public class UserRepositoryTest {
-    private User nwinston, wsugar, sharley;
+
+    @Mock
+    private HashMap<String, User> usersData;
+
+    @InjectMocks
     private UserRepository userRepository;
 
     @Before
     public void setUp() throws Exception {
-       nwinston = new User("1", "nwinston", "Napoleon", "Winston");
-       wsugar = new User("2", "wsugar", "Whiskers", "Sugar");
-       sharley = new User("3", "sharley", "Sylvester", "Harley");
-       userRepository = new UserRepository();
-
-    }
-
-    @Test
-    public void getConsultantById() throws Exception {
-        String id = "2";
-        User user = userRepository.getById(id);
-        assertEquals(id, user.getId());
-
+        initMocks(this);
     }
 
     @Test
     public void shouldGetAllUsers() throws Exception {
-        List<User> usersFromRepository = userRepository.getAllUsers();
-        List<User> testUsers = Arrays.asList(nwinston, wsugar, sharley);
-        assert(usersFromRepository.containsAll(testUsers));
-        assertEquals(usersFromRepository.size(), testUsers.size());
+        List<User> users = new ArrayList<>();
+        when(usersData.values()).thenReturn(users);
+
+        List<User> result = userRepository.getAllUsers();
+
+        assertEquals(result, users);
+    }
+
+    @Test
+    public void shouldGetUserById() throws Exception {
+        String id = "2";
+        User mike = new User(id, null, "Mike", null);
+        when(usersData.containsKey(id)).thenReturn(true);
+        when(usersData.get(id)).thenReturn(mike);
+
+        User result = userRepository.getById(id);
+
+        assertEquals(result, mike);
     }
 
     @Test
     public void shouldUpdateUserWithID() {
-        String firstName = "Socks";
-        nwinston.setFirstName(firstName);
-        userRepository.update(nwinston);
-        assertEquals(firstName, userRepository.getById(nwinston.getId()).getFirstName());
+        String id = "2";
+        User mike = new User(id, null, "Mike", null);
+        when(usersData.containsKey(id)).thenReturn(true);
+
+        userRepository.update(mike);
+
+        verify(usersData).put(id, mike);
     }
 
     @Test
     public void shouldSaveUser() {
-        User testUser = mock(User.class);
+        User testUser = new User();
+
         userRepository.save(testUser);
-        List allUsers = userRepository.getAllUsers();
-        assert(allUsers.contains(testUser));
+
+        verify(usersData).put(any(String.class), eq(testUser));
     }
+
 }

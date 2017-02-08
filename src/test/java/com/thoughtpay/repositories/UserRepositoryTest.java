@@ -26,15 +26,10 @@ public class UserRepositoryTest {
     private UserRepository userRepository;
     private final String randomId = "2";
 
-    private User mike;
-    private String id;
 
     @Before
     public void setUp() throws Exception {
         initMocks(this);
-
-        id = "2";
-        mike = new User(id, null, "Mike", null);
     }
 
     @Test

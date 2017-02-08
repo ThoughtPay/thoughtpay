@@ -4,7 +4,9 @@ import com.thoughtpay.domain.User;
 import com.thoughtpay.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/users")
@@ -26,9 +28,10 @@ public class UserController {
     }
 
     @RequestMapping(value="/{id}/profile", method = RequestMethod.GET)
-    public String viewProfile(@PathVariable String id){
-        userService.getUser(id);
-        return "/" + id + "/profile";
+    public ModelAndView getUserProfilePage(@PathVariable String id, ModelMap model){
+        model.addAttribute("user", userService.getUser(id));
+        System.out.println("trying to view your private info");
+        return new ModelAndView("userProfile", model);
     }
 
 }

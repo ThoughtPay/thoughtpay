@@ -21,7 +21,7 @@
                 <tbody>
                     <c:forEach var="user" items="${users}">
                         <tr>
-                            <td> <input type="submit" value="view"></td>
+                            <td> <form:form action="/users/${user.id}/profile" method="GET"><input type="submit" value="view"></form:form></td>
                             <form:form action="/users/${user.id}/update" method="PUT">
                                 <td><input type="text" name="userName" value="${user.userName}" /></td>
                                 <td><input type="text" name="firstName" value="${user.firstName}" /></td>

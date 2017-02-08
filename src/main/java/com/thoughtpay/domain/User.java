@@ -2,8 +2,12 @@ package com.thoughtpay.domain;
 
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
+@NoArgsConstructor
 public class User {
 
     @Getter
@@ -22,7 +26,6 @@ public class User {
     @Setter
     private String lastName;
 
-    public User() {}
 
     public User(String id, String userName, String firstName, String lastName) {
         this.id = id;
@@ -46,6 +49,10 @@ public class User {
     @Override
     public int hashCode() {
         return id.hashCode();
+    }
+
+    public String generateID() {
+        return UUID.randomUUID().toString();
     }
 
 }

@@ -34,9 +34,9 @@ public class UserServiceTest {
     }
 
     @Test
-    public void shouldSaveUserInRepository() {
-        userService.saveNewUser(user);
-        verify(userRepository).save(user);
+    public void shouldCreateUserInRepository() {
+        userService.create(user);
+        verify(userRepository).create(user);
     }
 
     @Test

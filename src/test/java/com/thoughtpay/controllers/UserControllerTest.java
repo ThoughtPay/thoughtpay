@@ -41,20 +41,20 @@ public class UserControllerTest {
 
     @Test
     public void shouldUpdateUser() throws Exception {
-        userController.updateUser(user);
+        userController.update(user);
         verify(userService).update(user);
-    }
-
-    @Test
-    public void shouldSaveUserWhenFormIsSubmitted() throws Exception {
-        userController.createUser(user);
-        verify(userService).saveNewUser(user);
     }
 
     @Test
     public void shouldGetUserToDisplay() throws Exception {
         userController.getUserProfilePage(id, model);
         verify(userService).getUser(id);
+    }
+
+    @Test
+    public void shouldCreateUserWhenFormIsSubmitted() throws Exception {
+        userController.create(user);
+        verify(userService).create(user);
     }
 
     @Test

@@ -16,14 +16,14 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value="/{id}/update", method = RequestMethod.PUT)
-    public String updateUser(User user) {
+    public String update(User user) {
         userService.update(user);
         return "redirect:/";
     }
 
     @RequestMapping(value="/create", method = RequestMethod.POST)
-    public String createUser(@ModelAttribute User user) {
-        userService.saveNewUser(user);
+    public String create(@ModelAttribute User user) {
+        userService.create(user);
         return "redirect:/";
     }
 

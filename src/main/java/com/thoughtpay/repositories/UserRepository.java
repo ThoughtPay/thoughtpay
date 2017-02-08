@@ -30,15 +30,13 @@ public class UserRepository {
         }
     }
 
-    public void save(User user) {
-        String id = generateID();
+    public void create(User user) {
+        String id = user.generateID();
         user.setId(id);
         allUsers.put(id, user);
     }
 
-    private String generateID() {
-        return UUID.randomUUID().toString();
-    }
+
 
     public void delete(User user) {
         allUsers.remove(user.getId());

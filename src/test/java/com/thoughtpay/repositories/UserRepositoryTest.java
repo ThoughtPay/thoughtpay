@@ -19,8 +19,12 @@ public class UserRepositoryTest {
     @Mock
     private HashMap<String, User> usersData;
 
+    @Mock
+    private User user;
+
     @InjectMocks
     private UserRepository userRepository;
+    private final String randomId = "2";
 
     private User mike;
     private String id;
@@ -37,44 +41,37 @@ public class UserRepositoryTest {
     public void shouldGetAllUsers() throws Exception {
         List<User> users = new ArrayList<>();
         when(usersData.values()).thenReturn(users);
-
         List<User> result = userRepository.getAllUsers();
-
         assertEquals(result, users);
     }
 
     @Test
     public void shouldGetUserById() throws Exception {
-        when(usersData.containsKey(id)).thenReturn(true);
-        when(usersData.get(id)).thenReturn(mike);
-
-        User result = userRepository.getById(id);
-
-        assertEquals(result, mike);
+        when(usersData.containsKey(randomId)).thenReturn(true);
+        when(usersData.get(randomId)).thenReturn(user);
+        User result = userRepository.getById(randomId);
+        assertEquals(result, user);
     }
 
     @Test
     public void shouldUpdateUserWithID() {
-        when(usersData.containsKey(id)).thenReturn(true);
-
-        userRepository.update(mike);
-
-        verify(usersData).put(id, mike);
+        when(usersData.containsKey(randomId)).thenReturn(true);
+        when(user.getId()).thenReturn(randomId);
+        userRepository.update(user);
+        verify(usersData).put(randomId, user);
     }
 
     @Test
-    public void shouldSaveUser() {
-        User testUser = new User();
-
-        userRepository.save(testUser);
-
-        verify(usersData).put(any(String.class), eq(testUser));
+    public void shouldCreateUser() {
+        when(user.generateID()).thenReturn(randomId);
+        userRepository.create(user);
+        verify(usersData).put(randomId, user);
     }
 
     @Test
     public void shouldDeleteUser() throws Exception {
-        userRepository.save(mike);
-        userRepository.delete(mike);
-        verify(usersData).remove(mike.getId());
+        userRepository.create(user);
+        userRepository.delete(user);
+        verify(usersData).remove(user.getId());
     }
 }

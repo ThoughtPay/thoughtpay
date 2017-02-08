@@ -15,8 +15,8 @@ public class UserService {
         userRepository.update(user);
     }
 
-    public void saveNewUser(User newUser) {
-        userRepository.save(newUser);
+    public void create(User newUser) {
+        userRepository.create(newUser);
     }
 
     public User getUser(String id) {

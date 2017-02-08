@@ -9,7 +9,12 @@ Fuctionally ThoughtPay is your basic money exchange system where there exist use
 1. Run IntelliJ and select "Import Project"  
 2. Navigate to your `/thoughtpay` directory  
 3. Select the `build.gradle` file  
-4. Press OK  
+4. Press OK
+5. Ennable Annotation Processing:
+  * Press `Command` `,`
+  * Search for `Annotation Processers`
+  * Check the box labeled `Enable Annotation Processing`
+  * In terminal type `./gradlew clean build`
 
 ### Running the App
 Make sure you are in the root directory in terminal  

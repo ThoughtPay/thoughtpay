@@ -75,6 +75,6 @@ public class UserRepositoryTest {
     public void shouldDeleteUser() throws Exception {
         userRepository.save(mike);
         userRepository.delete(mike);
-        verify(usersData).remove(mike);
+        verify(usersData).remove(mike.getId());
     }
 }

@@ -24,7 +24,7 @@
                                 <td><input type="text" name="userName" value="${user.userName}" /></td>
                                 <td><input type="text" name="firstName" value="${user.firstName}" /></td>
                                 <td><input type="text" name="lastName" value="${user.lastName}" /></td>
-                                <td><input type="submit" value="Edit" /></td>
+                                <td><input type="submit" value="Save" /></td>
                             </form:form>
                         </tr>
                     </c:forEach>

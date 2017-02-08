@@ -46,4 +46,11 @@ public class UserServiceTest {
         User userFromRepository = userService.getUser(id);
         assertSame(user, userFromRepository);
     }
+
+    @Test
+    public void shouldDeleteUserFromRepository() throws Exception {
+        userService.deleteUser(user);
+        verify(userRepository).delete(user);
+
+    }
 }

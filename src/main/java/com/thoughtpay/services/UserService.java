@@ -19,10 +19,12 @@ public class UserService {
         userRepository.save(newUser);
     }
 
-    public User getUser(String id) { return userRepository.getById(id);}
+    public User getUser(String id) {
+        return userRepository.getById(id);
+    }
 
     public void deleteUser(User user) {
-
+        userRepository.delete(user);
     }
 }
 

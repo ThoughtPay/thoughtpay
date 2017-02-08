@@ -34,6 +34,9 @@ public class UserController {
         return new ModelAndView("userProfile", model);
     }
 
-    public void deleteUser(User user) {
+    @RequestMapping(value="/{id}/delete", method = RequestMethod.DELETE)
+    public String deleteUser(User user) {
+        userService.deleteUser(user);
+        return "redirect:/";
     }
 }

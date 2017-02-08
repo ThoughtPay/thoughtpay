@@ -40,4 +40,7 @@ public class UserRepository {
         return UUID.randomUUID().toString();
     }
 
+    public void delete(User user) {
+        allUsers.remove(user.getId());
+    }
 }

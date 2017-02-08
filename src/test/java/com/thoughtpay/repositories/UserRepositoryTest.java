@@ -22,9 +22,15 @@ public class UserRepositoryTest {
     @InjectMocks
     private UserRepository userRepository;
 
+    private User mike;
+    private String id;
+
     @Before
     public void setUp() throws Exception {
         initMocks(this);
+
+        id = "2";
+        mike = new User(id, null, "Mike", null);
     }
 
     @Test
@@ -39,8 +45,6 @@ public class UserRepositoryTest {
 
     @Test
     public void shouldGetUserById() throws Exception {
-        String id = "2";
-        User mike = new User(id, null, "Mike", null);
         when(usersData.containsKey(id)).thenReturn(true);
         when(usersData.get(id)).thenReturn(mike);
 
@@ -51,8 +55,6 @@ public class UserRepositoryTest {
 
     @Test
     public void shouldUpdateUserWithID() {
-        String id = "2";
-        User mike = new User(id, null, "Mike", null);
         when(usersData.containsKey(id)).thenReturn(true);
 
         userRepository.update(mike);
@@ -69,4 +71,10 @@ public class UserRepositoryTest {
         verify(usersData).put(any(String.class), eq(testUser));
     }
 
+    @Test
+    public void shouldDeleteUser() throws Exception {
+        userRepository.save(mike);
+        userRepository.delete(mike);
+        verify(usersData).remove(mike);
+    }
 }

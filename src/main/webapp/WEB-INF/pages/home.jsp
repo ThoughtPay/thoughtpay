@@ -28,6 +28,9 @@
                                 <td><input type="text" name="lastName" value="${user.lastName}" /></td>
                                 <td><input type="submit" value="Save" /></td>
                             </form:form>
+                            <form:form action="/users/${user.id}/delete" method="DELETE">
+                                <td><input type="submit" value="Delete"/></td>
+                            </form:form>
                         </tr>
                     </c:forEach>
                 </tbody>

@@ -13,7 +13,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value="/{id}/update", method = RequestMethod.POST)
+    @RequestMapping(value="/{id}/update", method = RequestMethod.PUT)
     public String updateUser(User user) {
         userService.update(user);
         return "redirect:/";

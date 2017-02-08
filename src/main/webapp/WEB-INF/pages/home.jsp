@@ -20,7 +20,7 @@
                 <tbody>
                     <c:forEach var="user" items="${users}">
                         <tr>
-                            <form:form action="/users/${user.id}/update" method="post">
+                            <form:form action="/users/${user.id}/update" method="PUT">
                                 <td><input type="text" name="userName" value="${user.userName}" /></td>
                                 <td><input type="text" name="firstName" value="${user.firstName}" /></td>
                                 <td><input type="text" name="lastName" value="${user.lastName}" /></td>
@@ -33,7 +33,7 @@
         </div>
         <div>
             <h3>Create an Account</h3>
-                    <form:form modelAttribute="user" method="post" action="/users/create">
+                    <form:form modelAttribute="user" method="PUT" action="/users/create">
                 Username:
                     <form:input path="userName"/><br>
                 First Name:

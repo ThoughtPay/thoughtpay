@@ -33,7 +33,7 @@
         </div>
         <div>
             <h3>Create an Account</h3>
-                    <form:form modelAttribute="user" method="PUT" action="/users/create">
+                    <form:form modelAttribute="user" method="POST" action="/users/create">
                 Username:
                     <form:input path="userName"/><br>
                 First Name:

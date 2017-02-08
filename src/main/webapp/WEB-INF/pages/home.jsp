@@ -12,6 +12,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th></th>
                         <th>Username</th>
                         <th>First Name</th>
                         <th>Last Name</th>
@@ -20,6 +21,7 @@
                 <tbody>
                     <c:forEach var="user" items="${users}">
                         <tr>
+                            <td> <input type="submit" value="view"></td>
                             <form:form action="/users/${user.id}/update" method="PUT">
                                 <td><input type="text" name="userName" value="${user.userName}" /></td>
                                 <td><input type="text" name="firstName" value="${user.firstName}" /></td>

@@ -25,4 +25,10 @@ public class UserController {
         return "redirect:/";
     }
 
+    @RequestMapping(value="/{id}/profile", method = RequestMethod.GET)
+    public String viewProfile(@PathVariable String id){
+        userService.getUser(id);
+        return "/" + id + "/profile";
+    }
+
 }

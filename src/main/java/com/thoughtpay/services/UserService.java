@@ -18,6 +18,8 @@ public class UserService {
     public void saveNewUser(User newUser) {
         userRepository.save(newUser);
     }
+
+    public User getUser(String id) { return userRepository.getById(id);}
 }
 
 

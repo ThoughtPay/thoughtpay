@@ -7,7 +7,9 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
+import static org.junit.Assert.assertSame;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 public class UserServiceTest {
@@ -35,5 +37,13 @@ public class UserServiceTest {
     public void shouldSaveUserInRepository() {
         userService.saveNewUser(user);
         verify(userRepository).save(user);
+    }
+
+    @Test
+    public void shouldGetUserFromId() throws Exception {
+        String id = "2";
+        when(userRepository.getById(id)).thenReturn(user);
+        User userFromRepository = userService.getUser(id);
+        assertSame(user, userFromRepository);
     }
 }

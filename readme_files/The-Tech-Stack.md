@@ -3,7 +3,7 @@
 **Repo:**           [GitHub](https://github.com/ThoughtPay/thoughtpay)  
 **Story Wall:**	[Mingle](https://internal.mingle-staging.thoughtworks.com/projects/thoughtpay/overview)   
 **MyTW group:**	[ThoughtPay](https://thoughtworks.jiveon.com/groups/thoughtpay/)  
-**Pipeline:**	[Snap CI](https://app.snap-ci.com/ThoughtPay/thoughtpay/branch/master)  
+**Pipeline:**	[Snap CI](https://app.snap-ci.com/ThoughtPay/thoughtpay/branch/master)  
 **Google Drive:**	[Google Drive](https://drive.google.com/drive/folders/0BxGBBBITrCfjZnl1VloweEJmQ1k?usp=sharing)    
 
 

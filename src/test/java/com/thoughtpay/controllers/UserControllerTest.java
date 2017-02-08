@@ -58,6 +58,12 @@ public class UserControllerTest {
     }
 
     @Test
+    public void shouldDeleteUser() throws Exception {
+        userController.deleteUser(user);
+        verify(userService).deleteUser(user);
+    }
+
+    @Test
     public void shouldAddUserToModelWhenVisitingProfile() throws Exception {
         when(userService.getUser(id)).thenReturn(user);
         userController.getUserProfilePage(id, model);

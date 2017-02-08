@@ -20,6 +20,10 @@ public class UserService {
     }
 
     public User getUser(String id) { return userRepository.getById(id);}
+
+    public void deleteUser(User user) {
+
+    }
 }
 
 

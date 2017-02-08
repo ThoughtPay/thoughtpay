@@ -34,4 +34,6 @@ public class UserController {
         return new ModelAndView("userProfile", model);
     }
 
+    public void deleteUser(User user) {
+    }
 }

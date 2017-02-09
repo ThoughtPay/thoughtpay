@@ -16,17 +16,21 @@
                         <th>Username</th>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach var="user" items="${users}">
                         <tr>
-                            <td> <form:form action="/users/${user.id}/profile" method="GET"><input type="submit" value="view"></form:form></td>
+                            <form:form action="/users/${user.id}/profile" method="GET">
+                                <td><input type="submit" value="View"></td>
+                            </form:form>
                             <form:form action="/users/${user.id}/update" method="PUT">
                                 <td><input type="text" name="userName" value="${user.userName}" /></td>
                                 <td><input type="text" name="firstName" value="${user.firstName}" /></td>
                                 <td><input type="text" name="lastName" value="${user.lastName}" /></td>
-                                <td><input type="submit" value="Save" /></td>
+                                <td><input type="submit" value="Update" /></td>
                             </form:form>
                             <form:form action="/users/${user.id}/delete" method="DELETE">
                                 <td><input type="submit" value="Delete"/></td>

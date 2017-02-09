@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @RequestMapping(value="/create", method = RequestMethod.POST)
-    public String create(@ModelAttribute User user) {
+    public String create(User user) {
         userService.create(user);
         return "redirect:/";
     }

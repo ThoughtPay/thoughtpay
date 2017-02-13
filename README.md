@@ -46,6 +46,6 @@ Make sure you are in the root directory in terminal
 **[How to Add Team Members](readme_files/Team-Membership.md)**
 
 ##Code Reviews
-**[#24 Read Basic User Profiles](readme_files/code-reviews/24-Read-Basic-User-Profiles.md)**
-
-**[#27 Delete User Profile](readme_files/code-reviews/27-delete-user-profile.md)**
+**[#24 Read Basic User Profiles](readme_files/code-reviews/24-Read-Basic-User-Profiles.md)**  
+**[#27 Delete User Profile](readme_files/code-reviews/27-delete-user-profile.md)**  
+**[#49 View Individual Profile](readme_files/code-reviews/49-view-individual-profile.md)** 

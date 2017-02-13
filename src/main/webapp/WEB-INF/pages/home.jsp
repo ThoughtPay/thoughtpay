@@ -23,17 +23,13 @@
                 <tbody>
                     <c:forEach var="user" items="${users}">
                         <tr>
-                            <form:form action="/users/${user.id}" method="GET">
-                                <td><input type="submit" value="View"></td>
-                            </form:form>
-                            <form:form action="/users/${user.id}" method="PUT">
+                            <form:form action="/users/${user.id}">
+                                <td><button type="submit" name="_method" value="GET">View</button></td>
                                 <td><input type="text" name="userName" value="${user.userName}" /></td>
                                 <td><input type="text" name="firstName" value="${user.firstName}" /></td>
                                 <td><input type="text" name="lastName" value="${user.lastName}" /></td>
-                                <td><input type="submit" value="Update" /></td>
-                            </form:form>
-                            <form:form action="/users/${user.id}" method="DELETE">
-                                <td><input type="submit" value="Delete"/></td>
+                                <td><button type="submit" name="_method" value="PUT">Update</button></td>
+                                <td><button type="submit" name="_method" value="DELETE">Delete</button></td>
                             </form:form>
                         </tr>
                     </c:forEach>

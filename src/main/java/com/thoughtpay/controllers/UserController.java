@@ -15,26 +15,25 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value="/{id}/update", method = RequestMethod.PUT)
+    @RequestMapping(value="/{id}", method = RequestMethod.PUT)
     public String update(User user) {
         userService.update(user);
         return "redirect:/";
     }
 
-    @RequestMapping(value="/create", method = RequestMethod.POST)
+    @RequestMapping(value="", method = RequestMethod.POST)
     public String create(User user) {
         userService.create(user);
         return "redirect:/";
     }
 
-    @RequestMapping(value="/{id}/profile", method = RequestMethod.GET)
-    public ModelAndView getUserProfilePage(@PathVariable String id, ModelMap model){
+    @RequestMapping(value="/{id}", method = RequestMethod.GET)
+    public ModelAndView viewProfile(@PathVariable String id, ModelMap model){
         model.addAttribute("user", userService.getUser(id));
-        System.out.println("trying to view your private info");
         return new ModelAndView("userProfile", model);
     }
 
-    @RequestMapping(value="/{id}/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value="/{id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable String id) {
         userService.delete(id);
         return "redirect:/";

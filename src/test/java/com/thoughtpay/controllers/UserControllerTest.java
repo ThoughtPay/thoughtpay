@@ -46,7 +46,7 @@ public class UserControllerTest {
 
     @Test
     public void shouldGetUserToDisplay() throws Exception {
-        userController.getUserProfilePage(id, model);
+        userController.viewProfile(id, model);
         verify(userService).getUser(id);
     }
 
@@ -65,12 +65,12 @@ public class UserControllerTest {
     @Test
     public void shouldAddUserToModelWhenVisitingProfile() throws Exception {
         when(userService.getUser(id)).thenReturn(user);
-        userController.getUserProfilePage(id, model);
+        userController.viewProfile(id, model);
         verify(model).addAttribute("user", user);
     }
     @Test
     public void shouldNavigateToProfile() {
-        ModelAndView modelAndView = userController.getUserProfilePage(id, model);
+        ModelAndView modelAndView = userController.viewProfile(id, model);
         assertEquals("userProfile", modelAndView.getViewName());
     }
 }

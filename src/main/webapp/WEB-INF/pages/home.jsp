@@ -23,16 +23,16 @@
                 <tbody>
                     <c:forEach var="user" items="${users}">
                         <tr>
-                            <form:form action="/users/${user.id}/profile" method="GET">
+                            <form:form action="/users/${user.id}" method="GET">
                                 <td><input type="submit" value="View"></td>
                             </form:form>
-                            <form:form action="/users/${user.id}/update" method="PUT">
+                            <form:form action="/users/${user.id}" method="PUT">
                                 <td><input type="text" name="userName" value="${user.userName}" /></td>
                                 <td><input type="text" name="firstName" value="${user.firstName}" /></td>
                                 <td><input type="text" name="lastName" value="${user.lastName}" /></td>
                                 <td><input type="submit" value="Update" /></td>
                             </form:form>
-                            <form:form action="/users/${user.id}/delete" method="DELETE">
+                            <form:form action="/users/${user.id}" method="DELETE">
                                 <td><input type="submit" value="Delete"/></td>
                             </form:form>
                         </tr>
@@ -42,7 +42,7 @@
         </div>
         <div>
             <h3>Create an Account</h3>
-            <form:form modelAttribute="user" method="POST" action="/users/create">
+            <form:form modelAttribute="user" method="POST" action="/users">
                 <label for="userName">Username:</label>
                 <form:input path="userName"/><br>
                 <label for="firstName">First Name:</label>

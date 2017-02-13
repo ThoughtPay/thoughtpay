@@ -16,6 +16,8 @@ import static org.mockito.MockitoAnnotations.initMocks;
 
 public class UserRepositoryTest {
 
+    private final String randomId = "2";
+
     @Mock
     private HashMap<String, User> usersData;
 
@@ -24,8 +26,6 @@ public class UserRepositoryTest {
 
     @InjectMocks
     private UserRepository userRepository;
-    private final String randomId = "2";
-
 
     @Before
     public void setUp() throws Exception {
@@ -65,8 +65,7 @@ public class UserRepositoryTest {
 
     @Test
     public void shouldDeleteUser() throws Exception {
-        userRepository.create(user);
-        userRepository.delete(user);
-        verify(usersData).remove(user.getId());
+        userRepository.delete(randomId);
+        verify(usersData).remove(randomId);
     }
 }

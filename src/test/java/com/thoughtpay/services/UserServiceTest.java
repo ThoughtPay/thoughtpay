@@ -13,6 +13,9 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 public class UserServiceTest {
+
+    private final String randomId = "2";
+
     @Mock
     UserRepository userRepository;
 
@@ -41,16 +44,14 @@ public class UserServiceTest {
 
     @Test
     public void shouldGetUserFromId() throws Exception {
-        String id = "2";
-        when(userRepository.getById(id)).thenReturn(user);
-        User userFromRepository = userService.getUser(id);
+        when(userRepository.getById(randomId)).thenReturn(user);
+        User userFromRepository = userService.getUser(randomId);
         assertSame(user, userFromRepository);
     }
 
     @Test
     public void shouldDeleteUserFromRepository() throws Exception {
-        userService.deleteUser(user);
-        verify(userRepository).delete(user);
-
+        userService.delete(randomId);
+        verify(userRepository).delete(randomId);
     }
 }

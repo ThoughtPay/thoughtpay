@@ -36,9 +36,7 @@ public class UserRepository {
         allUsers.put(id, user);
     }
 
-
-
-    public void delete(User user) {
-        allUsers.remove(user.getId());
+    public void delete(String id) {
+        allUsers.remove(id);
     }
 }

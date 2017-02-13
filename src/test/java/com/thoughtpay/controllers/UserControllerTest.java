@@ -10,7 +10,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -47,7 +46,7 @@ public class UserControllerTest {
 
     @Test
     public void shouldGetUserToDisplay() throws Exception {
-        userController.getUserProfilePage(id, model);
+        userController.viewProfile(id, model);
         verify(userService).getUser(id);
     }
 
@@ -59,19 +58,19 @@ public class UserControllerTest {
 
     @Test
     public void shouldDeleteUser() throws Exception {
-        userController.deleteUser(user);
-        verify(userService).deleteUser(user);
+        userController.delete(id);
+        verify(userService).delete(id);
     }
 
     @Test
     public void shouldAddUserToModelWhenVisitingProfile() throws Exception {
         when(userService.getUser(id)).thenReturn(user);
-        userController.getUserProfilePage(id, model);
+        userController.viewProfile(id, model);
         verify(model).addAttribute("user", user);
     }
     @Test
     public void shouldNavigateToProfile() {
-        ModelAndView modelAndView = userController.getUserProfilePage(id, model);
+        ModelAndView modelAndView = userController.viewProfile(id, model);
         assertEquals("userProfile", modelAndView.getViewName());
     }
 }

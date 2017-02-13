@@ -8,6 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import static org.junit.Assert.assertSame;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
@@ -44,9 +45,8 @@ public class UserServiceTest {
 
     @Test
     public void shouldGetUserFromId() throws Exception {
-        when(userRepository.getById(randomId)).thenReturn(user);
-        User userFromRepository = userService.getUser(randomId);
-        assertSame(user, userFromRepository);
+        userService.getUser(randomId);
+        verify(userRepository).getById(randomId);
     }
 
     @Test
@@ -54,4 +54,5 @@ public class UserServiceTest {
         userService.delete(randomId);
         verify(userRepository).delete(randomId);
     }
+
 }

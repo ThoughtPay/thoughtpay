@@ -47,5 +47,8 @@ Make sure you are in the root directory in terminal
 
 ##Code Reviews
 **[#24 Read Basic User Profiles](readme_files/code-reviews/24-Read-Basic-User-Profiles.md)**  
+**[#25 Create Basic User Profile](readme_files/code-reviews/25-create-user.md)**  
+**[#26 Update Basic User Profile](readme_files/code-reviews/26-update-user.md)**  
 **[#27 Delete User Profile](readme_files/code-reviews/27-delete-user-profile.md)**  
-**[#49 View Individual Profile](readme_files/code-reviews/49-view-individual-profile.md)** 
+**[#49 View Individual Profile](readme_files/code-reviews/49-view-individual-profile.md)**
+

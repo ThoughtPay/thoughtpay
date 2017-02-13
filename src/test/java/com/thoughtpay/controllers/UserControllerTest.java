@@ -58,8 +58,8 @@ public class UserControllerTest {
 
     @Test
     public void shouldDeleteUser() throws Exception {
-        userController.delete(user);
-        verify(userService).delete(user);
+        userController.delete(id);
+        verify(userService).delete(id);
     }
 
     @Test

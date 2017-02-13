@@ -23,8 +23,8 @@ public class UserService {
         return userRepository.getById(id);
     }
 
-    public void delete(User user) {
-        userRepository.delete(user);
+    public void delete(String id) {
+        userRepository.delete(id);
     }
 }
 

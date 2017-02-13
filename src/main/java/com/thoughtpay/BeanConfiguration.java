@@ -12,13 +12,15 @@ public class BeanConfiguration {
 
     @Bean
     public HashMap<String, User> getAllUsers() {
-        HashMap<String, User> result = new HashMap<>();
-        result.put("1", new User("1", "nwinston", "Napoleon", "Winston"));
-        result.put("2", new User("2", "wsugar", "Whiskers", "Sugar"));
-        result.put("3", new User("3", "sharley", "Sylvester", "Harley"));
+        HashMap<String, User> userMap = new HashMap<>();
+        for (User user : UserBuilder.allUsers) {
+            userMap.put(user.getId(), user);
+        }
 
-        return result;
+        return userMap;
     }
+
+
 
     @Bean
     public InternalResourceViewResolver getInternalResourceViewResolver() {

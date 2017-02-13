@@ -27,15 +27,6 @@ public class User {
     private String lastName;
 
 
-    public User(String id, String userName, String firstName, String lastName) {
-        this.id = id;
-        this.userName = userName;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

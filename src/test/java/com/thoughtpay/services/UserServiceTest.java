@@ -49,7 +49,7 @@ public class UserServiceTest {
 
     @Test
     public void shouldDeleteUserFromRepository() throws Exception {
-        userService.deleteUser(user);
+        userService.delete(user);
         verify(userRepository).delete(user);
 
     }

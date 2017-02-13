@@ -1,4 +1,4 @@
-# #27 View Individual Profile
+# #49 View Individual Profile
 
 ### Questions
 * Should we have a template for our pages (ex navbar)
